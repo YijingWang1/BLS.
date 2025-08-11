@@ -6,12 +6,10 @@ load BK.mat; %load .mat
 
 assert(isfloat(train_x), 'train_x must be a float');
 assert(isfloat(test_x), 'test_x must be a float');
-
-lamd1 = 2^-10;      %----C: the regularization parameter for sparse regualarization
-lamd2 = 2^-15;  
+  
 s = .8;              %----s: the shrinkage parameter for enhancement nodes
 best = 2;
-result = [];
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % We apply the grid search on the test data set for instance and simplicity
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
