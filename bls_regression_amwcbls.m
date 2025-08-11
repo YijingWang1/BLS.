@@ -14,8 +14,8 @@ best = 2;
 % We apply the grid search on the test data set for instance and simplicity
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 for NumFea=1:20 %searching range for feature nodes  per window in feature layer
-    for NumWin=1:20%searching range for number of windows in feature layer
-        for NumEnhan=2:200%searching range for enhancement nodes
+    for NumWin=1:20 %searching range for number of windows in feature layer
+        for NumEnhan=1:200 %searching range for enhancement nodes
             clc;
             rand('state',1)
             for i=1:NumWin
@@ -23,10 +23,7 @@ for NumFea=1:20 %searching range for feature nodes  per window in feature layer
                 WF{i}=WeightFea;
             end                                                          %generating weight and bias matrix for each window in feature layer
             %             if NumFea*NumWin>=NumEnhan
-            %                 WeightEnhan=orth(2*rand(NumWin*NumFea+1,NumEnhan)-1);
-            %             else
-            %                 WeightEnhan=orth(2*rand(NumWin*NumFea+1,NumEnhan)'-1)';
-            %             end
+
             WeightEnhan=2*rand(NumWin*NumFea+1,NumEnhan)-1;
             fprintf(1, 'Fea. No.= %d, Win. No. = %d, Enhan. No. = %d\n', NumFea, NumWin, NumEnhan);
             
